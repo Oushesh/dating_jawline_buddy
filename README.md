@@ -13,6 +13,9 @@ This is supposed to be an app in the future where you can get the male/female di
 
 ```bash
 pip install -r requirements.txt
+export DJANGO_DEBUG=True
+export DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost
+# Optional: export DJANGO_SECRET_KEY=<your-secret>
 cd django
 python manage.py migrate
 python manage.py runserver
