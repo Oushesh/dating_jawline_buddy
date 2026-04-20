@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jawline Buddy MVP</title>
+  </head>
+  <body>
+    <h1>Jawline Buddy MVP (Django)</h1>
+    <p>Upload your front and left side photos to get first-pass measurements.</p>
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Analyze</button>
+    </form>
+
+    {% if measurements %}
+      <h2>Estimated measurements</h2>
+      <ul>
+        {% for label, value in measurements.items %}
+          <li>{{ label }}: {{ value }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </body>
+</html>
