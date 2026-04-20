@@ -1,0 +1,10 @@
+[project]
+name = "dating-jawline-buddy"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "django>=5,<6",
+]
+
+[tool.uv]
+dev-dependencies = []
